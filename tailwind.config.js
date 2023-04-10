@@ -9,6 +9,10 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
     ],
     theme: {
       extend: {
+        boxShadow: {
+          "input-shadow": "0 1px 15px 1px rgba(0, 0, 0, 0.1)",
+          "header-shadow": "0 2px 8px 0px rgba(0, 0, 0, 0.1)",
+        },
         colors: {
           darkBlue: "hsl(209, 23%, 22%)",
           veryDarkBlueDarkBg: "hsl(207, 26%, 17%)",

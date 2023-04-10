@@ -5,17 +5,17 @@ import moonSvg from "../assets/moon.svg";
 
 const Header = () => {
   return (
-    <header className="flex h-[6rem] items-center  shadow-lg bg-white">
-      <div className="flex justify-between mx-5 w-full">
+    <header className="fixed flex h-[6rem] items-center shadow-header-shadow bg-white border-t-[1px] text-veryDarkBlueLightText w-full z-50">
+      <div className="flex justify-between mx-5 md:mx-[4rem] w-full">
         <div>
-          <h1 className="font-extrabold text-[1.1rem] cursor-pointer">
+          <h1 className="font-extrabold text-[1.1rem] md:text-[1.5rem] cursor-pointer">
             Where in the world?
           </h1>
         </div>
 
         <div className="flex gap-2 font-[600] cursor-pointer">
           <span className="pt-1">
-            <Image src={moonSvg} alt="" width={16} height={16} />
+            <Image src={moonSvg} alt="theme-mode" width={16} height={16} />
           </span>
           Dark Mode
         </div>
