@@ -24,13 +24,12 @@ Users should be able to:
 - Search for a country using an `input` field
 - Filter countries by region
 - Click on a country to see more detailed information on a separate page
-- Click through to the border countries on the detail page
-- Toggle the color scheme between light and dark mode _(optional)_
+- Toggle the color scheme between light and dark mode
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/NIKO-DEV06/REST-Countries)
+- Live Site URL: [Add live site URL here](https://rest-countries-niko.vercel.app/)
 
 ### Built with
 
