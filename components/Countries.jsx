@@ -47,7 +47,7 @@ const Countries = ({ countries }) => {
               onClick={clearInput}
               className="cursor-pointer absolute right-10 md:right-[11.5rem]  md:translate-x-[6rem] top-1/2 transform -translate-y-1/2"
               src={cancelSvg}
-              alt="search"
+              alt="cancel"
               width={22}
               height={22}
             />
@@ -155,6 +155,7 @@ const Countries = ({ countries }) => {
                     alt={country.flags.alt}
                     width={300}
                     height={300}
+                    priority
                   />
                 </Link>
               </div>

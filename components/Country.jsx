@@ -27,7 +27,7 @@ const Country = async ({ countryId }) => {
           <Image
             className="mx-auto lg:ml-[4rem] lg:scale-[1.1] xl:scale-[1.3] lg:translate-y-[50%] xl:translate-x-[3rem]"
             src={countryData[0].flags.png}
-            alt={countryData[0].flags.alt}
+            alt={countryData[0].name.common}
             width={350}
             height={350}
             priority
