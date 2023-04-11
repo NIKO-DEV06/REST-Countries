@@ -4,6 +4,7 @@ import { Fragment, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import searchSvg from "../assets/search.svg";
+import cancelSvg from "../assets/cancel.svg";
 import downSvg from "../assets/down.svg";
 
 const Countries = ({ countries }) => {
@@ -15,12 +16,17 @@ const Countries = ({ countries }) => {
     setIsFilterShowing(!isFilterShowing);
   };
 
+  const clearInput = () => {
+    setSearchTerm("");
+  };
+
   return (
     <Fragment>
       <section className="w-full md:flex md:justify-between text-veryDarkBlueLightText">
         <div className="relative flex my-7 justify-center">
           <input
             placeholder="Search for a country..."
+            value={searchTerm}
             className="w-full mx-5 h-[3.75rem] shadow-input-shadow rounded-lg outline-none pl-[5rem] box-border font-[600] text-darkGrayLightInput md:w-[25rem] md:mx-[4rem]"
             type="text"
             onChange={(event) => setSearchTerm(event.target.value)}
@@ -36,6 +42,16 @@ const Countries = ({ countries }) => {
             width={22}
             height={22}
           />
+          {searchTerm !== "" && (
+            <Image
+              onClick={clearInput}
+              className="cursor-pointer absolute right-10 md:right-[11.5rem]  md:translate-x-[6rem] top-1/2 transform -translate-y-1/2"
+              src={cancelSvg}
+              alt="search"
+              width={22}
+              height={22}
+            />
+          )}
         </div>
         <div className="ml-5 z-10">
           <div
@@ -48,37 +64,55 @@ const Countries = ({ countries }) => {
           {isFilterShowing && (
             <div className="w-[13rem] shadow-input-shadow mt-2 font-[600] flex flex-col gap-3 rounded-md absolute bg-white">
               <p
-                onClick={() => setSelectedOption("All Regions")}
+                onClick={() => {
+                  setSelectedOption("All Regions");
+                  setIsFilterShowing(false);
+                }}
                 className="ml-6 mt-5 cursor-pointer"
               >
                 All Regions
               </p>
               <p
-                onClick={() => setSelectedOption("Africa")}
+                onClick={() => {
+                  setSelectedOption("Africa");
+                  setIsFilterShowing(false);
+                }}
                 className="ml-6 cursor-pointer"
               >
                 Africa
               </p>
               <p
-                onClick={() => setSelectedOption("Americas")}
+                onClick={() => {
+                  setSelectedOption("Americas");
+                  setIsFilterShowing(false);
+                }}
                 className="ml-6 cursor-pointer"
               >
                 America
               </p>
               <p
-                onClick={() => setSelectedOption("Asia")}
+                onClick={() => {
+                  setSelectedOption("Asia");
+                  setIsFilterShowing(false);
+                }}
                 className="ml-6 cursor-pointer"
               >
                 Asia
               </p>
               <p
-                onClick={() => setSelectedOption("Europe")}
+                onClick={() => {
+                  setSelectedOption("Europe");
+                  setIsFilterShowing(false);
+                }}
                 className="ml-6 cursor-pointer"
               >
                 Europe
               </p>
               <p
-                onClick={() => setSelectedOption("Oceania")}
+                onClick={() => {
+                  setSelectedOption("Oceania");
+                  setIsFilterShowing;
+                }}
                 className="ml-6 mb-5 cursor-pointer"
               >
                 Oceania

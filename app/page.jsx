@@ -2,6 +2,7 @@ import Countries from "@/components/Countries";
 
 async function fetchCountries() {
   const response = await fetch("https://restcountries.com/v3.1/all");
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   const countries = await response.json();
   return countries;
 }
