@@ -152,7 +152,7 @@ const Countries = ({ countries }) => {
                   <Image
                     className="rounded-t-lg cursor-pointer object-cover object-top h-[12.5rem]"
                     src={country.flags.png}
-                    alt={country.flags.alt}
+                    alt={country.name.common}
                     width={300}
                     height={300}
                     priority

@@ -22,7 +22,7 @@ const Country = async ({ countryId }) => {
         </div>
       </Link>
 
-      <div classname="lg:w-[20rem]">
+      <div>
         <div className="mt-10 ">
           <Image
             className="mx-auto lg:ml-[4rem] lg:scale-[1.1] xl:scale-[1.3] lg:translate-y-[50%] xl:translate-x-[3rem]"
