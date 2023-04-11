@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import backSvg from "../assets/back.svg";
-import { Countries } from "@/components/Countries";
 
 async function fetchCountryData(name) {
   const response = await fetch(`https://restcountries.com/v3.1/name/${name}`);
@@ -13,9 +12,9 @@ const Country = async ({ countryId }) => {
   const countryData = await fetchCountryData(countryId);
 
   return (
-    <section className="pt-[130px] overflow-hidden">
+    <section className="pt-[130px] overflow-hidden dark:text-white">
       <Link href="/">
-        <div className="bg-white shadow-input-shadow w-[7.5rem] ml-5 cursor-pointer lg:ml-[4rem]">
+        <div className="bg-white dark:bg-darkBlue shadow-input-shadow w-[7.5rem] ml-5 cursor-pointer lg:ml-[4rem]">
           <div className="flex py-3 justify-center gap-3 font-semibold">
             <Image src={backSvg} alt="backSvg" width={20} height={20} />
             <p>Back</p>
@@ -88,10 +87,15 @@ const Country = async ({ countryId }) => {
             </h2>
             <div className="mt-4 mb-3 grid grid-cols-3 gap-2 lg:grid-cols-3">
               {countryData[0].borders?.map((border) => (
-                <div className="bg-white shadow-input-shadow w-[6rem]">
+                <div className="dark:bg-darkBlue bg-white shadow-input-shadow w-[6rem]">
                   <p className="text-center py-[5px]">{border}</p>
                 </div>
               ))}
+              {!countryData[0].borders && (
+                <span className="absolute font-bold lg:translate-x-0 lg:translate-y-[-0.8rem] translate-y-[-2.6rem] translate-x-[9.5rem]">
+                  No border countries.
+                </span>
+              )}
             </div>
           </div>
         </div>

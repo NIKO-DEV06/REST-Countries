@@ -11,7 +11,7 @@ const loading = () => {
         width={100}
         height={100}
       />
-      <p className="text-center font-bold">Hang On...</p>
+      <p className="text-center font-bold dark:text-white">Hang On...</p>
     </div>
   );
 };

@@ -22,12 +22,12 @@ const Countries = ({ countries }) => {
 
   return (
     <Fragment>
-      <section className="w-full md:flex md:justify-between text-veryDarkBlueLightText">
-        <div className="relative flex my-7 justify-center">
+      <section className="w-full md:flex md:justify-between text-veryDarkBlueLightText dark:text-white">
+        <div className="relative flex my-7 justify-center ">
           <input
             placeholder="Search for a country..."
             value={searchTerm}
-            className="w-full mx-5 h-[3.75rem] shadow-input-shadow rounded-lg outline-none pl-[5rem] box-border font-[600] text-darkGrayLightInput md:w-[25rem] md:mx-[4rem]"
+            className="dark:bg-darkBlue w-full mx-5 h-[3.75rem] shadow-input-shadow rounded-lg outline-none pl-[5rem] box-border font-[600] text-darkGrayLightInput md:w-[25rem] md:mx-[4rem]"
             type="text"
             onChange={(event) => setSearchTerm(event.target.value)}
             style={{
@@ -53,22 +53,22 @@ const Countries = ({ countries }) => {
             />
           )}
         </div>
-        <div className="ml-5 z-10">
+        <div className="ml-5 z-10 dark:text-white">
           <div
             onClick={toggleFilter}
-            className="w-[13rem] h-[3.5rem] shadow-input-shadow rounded-md flex justify-center items-center gap-[3rem] font-[600] text-veryDarkBlueLightText cursor-pointer md:mr-[4rem] md:mt-7"
+            className="bg-white dark:bg-darkBlue w-[13rem] h-[3.5rem] shadow-input-shadow rounded-md flex justify-center items-center gap-[3rem] font-[600] text-veryDarkBlueLightText cursor-pointer md:mr-[4rem] md:mt-7"
           >
-            {selectedOption}
+            <span className="dark:text-white">{selectedOption}</span>
             <Image src={downSvg} alt="dropdown" width={25} height={25} />
           </div>
           {isFilterShowing && (
-            <div className="w-[13rem] shadow-input-shadow mt-2 font-[600] flex flex-col gap-3 rounded-md absolute bg-white">
+            <div className="w-[13rem] shadow-input-shadow mt-2 font-[600] flex flex-col gap-3 rounded-md absolute bg-white dark:bg-darkBlue ">
               <p
                 onClick={() => {
                   setSelectedOption("All Regions");
                   setIsFilterShowing(false);
                 }}
-                className="ml-6 mt-5 cursor-pointer"
+                className="ml-6 mt-5 cursor-pointer dark:text-white"
               >
                 All Regions
               </p>
@@ -111,7 +111,7 @@ const Countries = ({ countries }) => {
               <p
                 onClick={() => {
                   setSelectedOption("Oceania");
-                  setIsFilterShowing;
+                  setIsFilterShowing(false);
                 }}
                 className="ml-6 mb-5 cursor-pointer"
               >
@@ -121,7 +121,7 @@ const Countries = ({ countries }) => {
           )}
         </div>
       </section>
-      <div className="z-0 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:mx-[3rem]">
+      <div className="z-0 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:mx-[3rem] dark:text-white">
         {countries
 
           .sort((a, b) => a.name.common.localeCompare(b.name.common))
@@ -145,7 +145,7 @@ const Countries = ({ countries }) => {
           .map((country) => (
             <div
               key={country.cca3}
-              className="bg-white w-[18rem] h-[25rem] mx-auto  shadow-input-shadow my-10 rounded-lg lg:hover:translate-y-[-2rem] duration-300"
+              className="bg-white dark:bg-darkBlue w-[18rem] h-[25rem] mx-auto  shadow-input-shadow my-10 rounded-lg lg:hover:translate-y-[-2rem] duration-300"
             >
               <div className="">
                 <Link href={`/${country.name.common}`}>
