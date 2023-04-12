@@ -8,28 +8,19 @@ import moonSvg from "../assets/moon.svg";
 import sunSvg from "../assets/sun.svg";
 
 const Header = () => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme"));
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
     if (storedTheme) {
       setTheme(storedTheme);
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark");
     }
   }, []);
 
   useEffect(() => {
+    localStorage.setItem("theme", theme);
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
