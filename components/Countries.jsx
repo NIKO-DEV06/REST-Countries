@@ -148,7 +148,7 @@ const Countries = ({ countries }) => {
               className="bg-white dark:bg-darkBlue w-[18rem] h-[25rem] mx-auto  shadow-input-shadow my-10 rounded-lg lg:hover:translate-y-[-2rem] duration-300"
             >
               <div className="">
-                <Link href={`/${country.name.common}`}>
+                <Link href={`/${country.cca3}`}>
                   <Image
                     className="rounded-t-lg cursor-pointer object-cover object-top h-[12.5rem]"
                     src={country.flags.png}

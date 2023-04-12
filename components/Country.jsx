@@ -3,7 +3,7 @@ import Link from "next/link";
 import backSvg from "../assets/back.svg";
 
 async function fetchCountryData(name) {
-  const response = await fetch(`https://restcountries.com/v3.1/name/${name}`);
+  const response = await fetch(`https://restcountries.com/v3.1/alpha/${name}`);
   const countryRes = await response.json();
   return countryRes;
 }
@@ -87,9 +87,11 @@ const Country = async ({ countryId }) => {
             </h2>
             <div className="mt-4 mb-3 grid grid-cols-3 gap-2 lg:grid-cols-3">
               {countryData[0].borders?.map((border) => (
-                <div className="dark:bg-darkBlue bg-white shadow-input-shadow w-[6rem]">
-                  <p className="text-center py-[5px]">{border}</p>
-                </div>
+                <Link href={`/${border}`}>
+                  <div className="dark:bg-darkBlue bg-white shadow-input-shadow w-[6rem]">
+                    <p className="text-center py-[5px]">{border}</p>
+                  </div>
+                </Link>
               ))}
               {!countryData[0].borders && (
                 <span className="absolute font-bold lg:translate-x-0 lg:translate-y-[-0.8rem] translate-y-[-2.6rem] translate-x-[9.5rem]">
