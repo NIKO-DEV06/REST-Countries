@@ -10,13 +10,13 @@ import sunSvg from "../assets/sun.svg";
 const Header = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
 
-  // useEffect(() => {
-  //   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  //     setTheme("dark");
-  //   } else {
-  //     setTheme("light");
-  //   }
-  // }, [theme]);
+  useEffect(() => {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
