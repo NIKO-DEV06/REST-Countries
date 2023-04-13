@@ -75,9 +75,7 @@ const Country = async ({ countryId }) => {
               <p className="ml-6 h-[3rem] w-[18rem] flex gap-1">
                 <span className="font-semibold">Languages:</span>{" "}
                 {countryData[0].languages &&
-                  Object.values(countryData[0].languages).map(
-                    (language) => `${language}, `
-                  )}
+                  Object.values(countryData[0].languages).join(", ")}
               </p>
             </div>
           </div>

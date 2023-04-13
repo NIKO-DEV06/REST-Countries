@@ -123,7 +123,6 @@ const Countries = ({ countries }) => {
       </section>
       <div className="z-0 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:mx-[3rem] dark:text-white">
         {countries
-
           .sort((a, b) => a.name.common.localeCompare(b.name.common))
           .filter((country) => {
             if (
